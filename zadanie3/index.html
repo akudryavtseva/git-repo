@@ -1,0 +1,44 @@
+<html>
+  <head> 
+  </head>
+
+  <style>
+    input {
+    width: 95%;
+    padding: 4px 4px;
+    margin: 4px 11px;
+    box-sizing: border-box;
+}
+
+    form {
+     position: absolute;
+	   border: 4px solid #d0dade;
+	   border-radius: 8px;
+	   background: #839ebf;
+	   width: 400px;
+}
+    #button {
+      background-color: #ccbbd2;
+      width: 200px;
+      margin-left: 100px;
+    }
+    .error input {
+      border: 1px solid red;
+    }
+    .error span {
+      color: #942f2f;
+    }
+  </style>
+
+  <body>
+     <form name="form_">
+     <p>Имя: <input type="text" name="nick"><br></p>
+     <p>Телефон: <input type="text" name="phone" placeholder="в формате +7(000)000-0000"><br></p>
+     <p> E-mail: <input type="text" name="email"><br></p>
+     <p> Адрес: <input type="text" name="adress"><br></p>          
+     <input type="button" id="button" onclick="validate(this.form)" value="Отправить">
+
+
+     <script src="js.js"></script>
+  </body>
+</html>
