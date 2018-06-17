@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+  <head>     
+  <style>
+    .form-field {
+     clear: both;
+     display: block;
+	   max-width: 250px;
+     padding-bottom: 10px;
+}
+    .form-field input.invalid {
+      border: 1px solid red;
+    }
+    .form-field input {
+      float: right;
+    }
+    .form-field textarea {
+      clear: both;
+      display: block;
+    }
+    .form-field select {           
+      max-width: 200px;
+    }
+
+  </style>    
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js.js"></script>
+  
+<script> 
+(function($) {
+  $(function() {
+    $.get('cities.json', {}, function(cities) {
+    var $select = $('<select/>');
+    cities.forEach(function(item) {
+      var $option = $('<option />', {
+        value: item.city,
+        text: item.city
+      });
+      $select.append($option);
+    });
+    $('#citiesField').append($select);
+  }, 'json');
+});
+
+$(function() {
+$('#birthdate').datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd.mm.yy',
+      firstday: 1
+    }); 
+});
+})(jQuery);
+
+(function($) {
+  $(function(){
+    $('#submit').click(function(){      
+    $('input.invalid').effect('bounce', {times: 3}, 1000);   
+    preventDefault(); 
+    });
+  });
+})(jQuery);    
+  </script> 
+
+  </head>
+  <body>
+     <form metod="get" name="myForm">
+       <label class="form-field" for="name">Name: <input type="text" data-validation-rule="name" id="name" name="name" /></label>
+       <label class="form-field" for="birthdate">Birthdate: <input type="text" data-validation-rule="birthdate" id="birthdate" name="birthdate" /></label>
+       <label class="form-field" for="phone">Phone: <input type="text" data-validation-rule="phone" id="phone" name="phone" /></label>
+       <label class="form-field" for="email">E-mail: <input type="text" data-validation-rule="email" id="email" name="email" /></label>
+       <label class="form-field" for="cities" id="citiesField">City: </label>
+       <label class="form-field" for="text">Message: <textarea name="message" id="message" cols="50" rows="5"></textarea></label>
+
+       <input type="submit" id="submit" value="Send">
+     </form>
+
+  </body>
+</html>
