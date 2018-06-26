@@ -1,0 +1,72 @@
+.offers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 98px;
+  margin-bottom: 100px;
+  p {
+    display: block;
+    color: #f16d7f;
+    font-size: 30px;
+    font-weight: 900;
+    margin: -14px 16px;
+  }
+  span {
+    display: block;
+    color: #222222;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 16px 18px;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+}
+.offers-big {
+  width: 560px;
+  height: 542px;
+  background-color: #ccc;
+  .off_m {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+    margin-top: 26px;
+    width: 175px;
+    height: 82px;
+    position: absolute;
+  }
+  .off-k {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+    width: 180px;
+    height: 82px;
+    margin-top: 26px;
+    position: absolute;
+  }
+}
+.offers-small {
+  width: 560px;
+  height: 261px;
+  background-color: #ccc;
+  .off_acces {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+    width: 225px;
+    height: 82px;
+    margin-top: 26px;
+    position: absolute;
+  }
+  .off-w {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+    width: 162px;
+    height: 82px;
+    margin-top: 26px;
+    position: absolute;
+  }
+}
+.offers > div > div:first-child {
+  margin-bottom: 20px;
+}
