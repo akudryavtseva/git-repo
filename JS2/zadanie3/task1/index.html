@@ -1,0 +1,25 @@
+<html>
+  <head> 
+
+  </head>  
+  <style>
+      textarea {
+      width: 500px;
+      padding: 4px 4px;
+      margin-bottom: 5px;
+          
+  }
+  </style>
+  <body>    
+      <textarea></textarea><br>      
+      <input type="button" value="Заменить" onclick="replaceText()">
+      
+      <script>
+      function replaceText() {
+        text = document.body.getElementsByTagName('textarea'); 
+        text[0].value = text[0].value.replace(/'/g, '\"');
+      }
+      </script>     
+     
+  </body>
+</html>
